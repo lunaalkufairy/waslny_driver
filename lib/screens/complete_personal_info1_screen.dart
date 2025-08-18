@@ -4,8 +4,8 @@ import 'package:waslny_driver/components/custom_textField.dart';
 import 'package:waslny_driver/components/pick_personal_photo.dart';
 import 'package:waslny_driver/constants.dart';
 
-class AddInformationScreen extends StatelessWidget {
-  const AddInformationScreen({super.key});
+class CompletePersonalInfo1Screen extends StatelessWidget {
+  const CompletePersonalInfo1Screen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +58,7 @@ class AddInformationScreen extends StatelessWidget {
                   height: 150,
                 ),
                 CustomButton(
-                  text: 'تأكيد',
+                  text: 'متابعة',
                   onTap: () {},
                 ),
               ],

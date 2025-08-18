@@ -3,7 +3,7 @@ import 'package:get/route_manager.dart';
 import 'package:waslny_driver/components/OTP_textField.dart';
 import 'package:waslny_driver/components/custom_Button.dart';
 import 'package:waslny_driver/constants.dart';
-import 'package:waslny_driver/screens/add_information_screen.dart';
+import 'package:waslny_driver/screens/complete_personal_info1_screen.dart';
 
 class OtpScreen extends StatelessWidget {
   const OtpScreen({super.key});
@@ -60,7 +60,7 @@ class OtpScreen extends StatelessWidget {
               ),
               CustomButton(
                 onTap: () {
-                  Get.to(AddInformationScreen());
+                  Get.to(CompletePersonalInfo1Screen());
                 },
                 text: "تأكيد",
                 isEnabled: true,
