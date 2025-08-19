@@ -12,7 +12,7 @@ class OtpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     String number = '0930474954';
     return Scaffold(
-      backgroundColor: black,
+      backgroundColor: black1,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.only(right: 15.0),

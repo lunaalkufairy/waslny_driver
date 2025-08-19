@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/state_manager.dart';
+import 'package:get/instance_manager.dart';
 import 'package:waslny_driver/components/custom_Button.dart';
 import 'package:waslny_driver/components/custom_textField.dart';
-import 'package:waslny_driver/components/pick_personal_photo.dart';
 import 'package:waslny_driver/constants.dart';
-import 'package:waslny_driver/screens/complete_personal_info2_screen.dart';
+import 'package:waslny_driver/screens/complete_car_info2_screen.dart';
 
-class CompletePersonalInfo1Screen extends StatelessWidget {
-  const CompletePersonalInfo1Screen({super.key});
+class CompleteCarInfo1Screen extends StatelessWidget {
+  const CompleteCarInfo1Screen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,47 +22,38 @@ class CompletePersonalInfo1Screen extends StatelessWidget {
                   height: 20,
                 ),
                 Text(
-                  "إكمال المعلومات الشخصية",
+                  "إكمال المعلومات المركبة",
                   style: TextStyle(
                       color: white, fontSize: 26, fontFamily: 'cairo'),
                 ),
                 SizedBox(
                   height: 30,
                 ),
-                Text(
-                  "الصورة الشخصية",
-                  style: TextStyle(
-                      color: white, fontSize: 14, fontFamily: 'cairo'),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                PickPersonalPhoto(),
                 CustomTextfield(
-                  textFieldName: "الاسم",
-                  hintText: 'الاسم',
+                  textFieldName: "اسم الشركة المصنعة",
+                  hintText: 'Mercedes AMG',
                 ),
                 SizedBox(
                   height: 25,
                 ),
                 CustomTextfield(
-                  textFieldName: "الكنية",
-                  hintText: 'الكنية',
+                  textFieldName: "الموديل",
+                  hintText: 'CLA300',
                 ),
                 SizedBox(
                   height: 25,
                 ),
                 CustomTextfield(
-                  textFieldName: "(اختياري) العنوان",
-                  hintText: 'العنوان',
+                  textFieldName: "عدد المقاعد",
+                  hintText: '6',
                 ),
                 const SizedBox(
-                  height: 150,
+                  height: 350,
                 ),
                 CustomButton(
                   text: 'متابعة',
                   onTap: () {
-                    Get.to(CompletePersonalInfo2Screen());
+                    Get.to(CompleteCarInfo2Screen());
                   },
                 ),
               ],
