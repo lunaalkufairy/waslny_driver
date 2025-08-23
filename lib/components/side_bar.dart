@@ -1,0 +1,114 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:waslny_driver/constants.dart';
+import 'package:waslny_driver/screens/my_orders_screen.dart';
+import 'package:waslny_driver/screens/setting_screen.dart';
+import 'package:waslny_driver/screens/view_information_screen.dart';
+import 'package:waslny_driver/screens/wallet_screen.dart';
+
+class SideBar extends StatelessWidget {
+  const SideBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: black1,
+      child: SafeArea(
+        child: Column(
+          children: [
+            SizedBox(height: 17),
+            ListTile(
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    "الملف الشخصي",
+                    style: TextStyle(
+                        color: white, fontSize: 20, fontFamily: 'cairo'),
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  SvgPicture.asset(
+                    'assets/icons/User.svg',
+                    height: 27,
+                  )
+                ],
+              ),
+              onTap: () {
+                Get.to(ViewInformationScreen());
+              },
+            ),
+            ListTile(
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    "المحفظة",
+                    style: TextStyle(
+                        color: white, fontSize: 20, fontFamily: 'cairo'),
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  SvgPicture.asset(
+                    'assets/icons/Wallet.svg',
+                    height: 27,
+                  )
+                ],
+              ),
+              onTap: () {
+                Get.to(WalletScreen());
+              },
+            ),
+            ListTile(
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    "طلباتي",
+                    style: TextStyle(
+                        color: white, fontSize: 20, fontFamily: 'cairo'),
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  SvgPicture.asset(
+                    'assets/icons/Orders.svg',
+                    height: 27,
+                  )
+                ],
+              ),
+              onTap: () {
+                Get.to(MyOrdersScreen());
+              },
+            ),
+            ListTile(
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    "الإعدادات",
+                    style: TextStyle(
+                        color: white, fontSize: 20, fontFamily: 'cairo'),
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  SvgPicture.asset(
+                    'assets/icons/Settings.svg',
+                    height: 27,
+                  )
+                ],
+              ),
+              onTap: () {
+                Get.to(SettingScreen());
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
