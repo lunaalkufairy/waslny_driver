@@ -1,29 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:get/route_manager.dart';
+import 'package:get/state_manager.dart';
 import 'package:waslny_driver/components/custom_Button.dart';
 import 'package:waslny_driver/components/phone_number_input.dart';
 import 'package:waslny_driver/constants.dart';
-import 'package:waslny_driver/screens/otp_screen.dart';
+import 'package:waslny_driver/controllers/login_screen_controller.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    LoginScreenController controller = Get.find();
+
     return Scaffold(
-      backgroundColor: black1,
+      backgroundColor: black,
       body: Padding(
         padding: EdgeInsetsGeometry.symmetric(horizontal: 8.0),
         child: SingleChildScrollView(
           child: Column(
             children: [
               SizedBox(
-                height: 250,
+                height: 200,
               ),
               SvgPicture.asset('assets/icons/Group 34.svg'),
               SizedBox(
-                height: 70,
+                height: 10,
               ),
               Text(
                 'تسجيل الدخول',
@@ -31,23 +35,18 @@ class LoginScreen extends StatelessWidget {
                     TextStyle(color: white, fontSize: 25, fontFamily: 'cairo'),
               ),
               SizedBox(
-                height: 35,
-              ),
-              Align(
-                alignment: Alignment(0.9, 0),
-                child: Text(
-                  'رقم الهاتف',
-                  style: TextStyle(
-                      color: white, fontSize: 14, fontFamily: 'cairo'),
-                ),
+                height: 30,
               ),
               PhoneNumberInput(),
               SizedBox(
                 height: 10,
               ),
               CustomButton(
-                  onTap: () {
-                    Get.to(OtpScreen());
+                  onTap: () async {
+                    await controller.sendPhone();
+                    if (controller.t) {
+                      controller.showExtrnalDialog();
+                    }
                   },
                   text: 'طلب رمز')
             ],

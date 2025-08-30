@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/state_manager.dart';
+import 'package:http/http.dart';
 import 'package:waslny_driver/components/custom_Button.dart';
 import 'package:waslny_driver/components/custom_textField.dart';
 import 'package:waslny_driver/components/pick_personal_photo.dart';
 import 'package:waslny_driver/constants.dart';
+import 'package:waslny_driver/controllers/add_information_Screen_controller.dart';
+import 'package:waslny_driver/controllers/image_picker_controller.dart';
 import 'package:waslny_driver/screens/complete_personal_info2_screen.dart';
 
 class CompletePersonalInfo1Screen extends StatelessWidget {
@@ -12,6 +14,13 @@ class CompletePersonalInfo1Screen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController firstnamecontroller = TextEditingController();
+    TextEditingController secondnamecontroller = TextEditingController();
+    TextEditingController serialnumberController = TextEditingController();
+    ImagePickerController controller =
+        Get.put(ImagePickerController(), permanent: true);
+    AddInformationScreenController addInformationScreenController =
+        Get.put(AddInformationScreenController(), permanent: true);
     return Scaffold(
       backgroundColor: black1,
       body: SingleChildScrollView(
@@ -42,6 +51,7 @@ class CompletePersonalInfo1Screen extends StatelessWidget {
                 CustomTextfield(
                   textFieldName: "الاسم",
                   hintText: 'الاسم',
+                  controller: firstnamecontroller,
                 ),
                 SizedBox(
                   height: 25,
@@ -49,13 +59,15 @@ class CompletePersonalInfo1Screen extends StatelessWidget {
                 CustomTextfield(
                   textFieldName: "الكنية",
                   hintText: 'الكنية',
+                  controller: secondnamecontroller,
                 ),
                 SizedBox(
                   height: 25,
                 ),
                 CustomTextfield(
-                  textFieldName: "(اختياري) العنوان",
-                  hintText: 'العنوان',
+                  textFieldName: "الرقم الوطني",
+                  hintText: 'الرقم الوطني',
+                  controller: serialnumberController,
                 ),
                 const SizedBox(
                   height: 150,
@@ -63,6 +75,16 @@ class CompletePersonalInfo1Screen extends StatelessWidget {
                 CustomButton(
                   text: 'متابعة',
                   onTap: () {
+                    addInformationScreenController.firstName =
+                        firstnamecontroller.text;
+                    addInformationScreenController.secondName =
+                        secondnamecontroller.text;
+                    addInformationScreenController.serialnumber =
+                        serialnumberController.text;
+                    print(addInformationScreenController.firstName);
+                    print(addInformationScreenController.secondName);
+                    print(addInformationScreenController.serialnumber);
+                    print(addInformationScreenController.personalImage);
                     Get.to(CompletePersonalInfo2Screen());
                   },
                 ),

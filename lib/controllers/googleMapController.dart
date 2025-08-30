@@ -10,7 +10,7 @@ class Googlemapcontroller extends GetxController {
 
   void customMarker() {
     BitmapDescriptor.asset(ImageConfiguration(size: Size(100, 100)),
-            "assets/images/CurrentLocationMarker.png")
+            "assets/icons/CurrentLocationMarker1.png")
         .then((icon) {
       customIcon = icon;
       update();

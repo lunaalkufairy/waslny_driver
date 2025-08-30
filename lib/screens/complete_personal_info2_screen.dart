@@ -4,6 +4,8 @@ import 'package:waslny_driver/components/custom_Button.dart';
 import 'package:waslny_driver/components/select_gender.dart';
 import 'package:waslny_driver/components/upload_cert_photo.dart';
 import 'package:waslny_driver/constants.dart';
+import 'package:waslny_driver/controllers/add_information_Screen_controller.dart';
+import 'package:waslny_driver/controllers/image_picker_controller.dart';
 import 'package:waslny_driver/screens/complete_car_info1_screen.dart';
 
 class CompletePersonalInfo2Screen extends StatelessWidget {
@@ -11,6 +13,8 @@ class CompletePersonalInfo2Screen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AddInformationScreenController addInformationScreenController =
+        Get.put(AddInformationScreenController(), permanent: true);
     return Scaffold(
       backgroundColor: black1,
       body: SingleChildScrollView(
@@ -61,7 +65,14 @@ class CompletePersonalInfo2Screen extends StatelessWidget {
                 ),
                 CustomButton(
                     onTap: () {
-                      Get.to(CompleteCarInfo1Screen());
+                      print(addInformationScreenController.firstName);
+                      print(addInformationScreenController.secondName);
+                      print(addInformationScreenController.serialnumber);
+                      print(addInformationScreenController.personalImage);
+                      print(addInformationScreenController.gender);
+                      print(addInformationScreenController.certImage);
+                      addInformationScreenController.checkValues();
+                      // Get.to(CompleteCarInfo1Screen());
                     },
                     text: 'متابعة'),
               ],

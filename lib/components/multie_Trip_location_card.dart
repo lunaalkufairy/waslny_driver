@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:waslny_driver/components/Location_white_circle.dart';
 import 'package:waslny_driver/components/circle_Line.dart';
 import 'package:waslny_driver/components/location_grey_center_circle.dart';
-import 'package:waslny_driver/components/location_white_circle.dart';
+
 import 'package:waslny_driver/components/location_grey_circle.dart';
 import 'package:waslny_driver/constants.dart';
 
@@ -33,6 +34,7 @@ class MultieTripLocationCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Text(
                           index == 0
@@ -53,7 +55,7 @@ class MultieTripLocationCard extends StatelessWidget {
                       ],
                     ),
                     SizedBox(
-                      width: 50,
+                      width: 30,
                     ),
                     index == 0
                         ? LocationGreyCircle()
