@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/instance_manager.dart';
 import 'package:waslny_driver/constants.dart';
+import 'package:waslny_driver/controllers/add_information_Screen_controller.dart';
 
 class SelectGender extends StatefulWidget {
   const SelectGender({super.key});
@@ -19,6 +21,8 @@ class _SelectGenderState extends State<SelectGender> {
 
   @override
   Widget build(BuildContext context) {
+    AddInformationScreenController controller =
+        Get.put(AddInformationScreenController(), permanent: true);
     return Center(
       child: Wrap(
         spacing: 12,
@@ -29,7 +33,11 @@ class _SelectGenderState extends State<SelectGender> {
             onTap: () {
               setState(() {
                 selectedIndex = index;
-                print(options[index]);
+                // controller.selectedIndex = selectedIndex;
+
+                print(selectedIndex);
+                controller.checkGender(selectedIndex!);
+                print(controller.gender);
               });
             },
             child: AnimatedContainer(

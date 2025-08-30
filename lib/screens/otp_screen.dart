@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
+import 'package:get/get.dart';
 import 'package:waslny_driver/components/OTP_textField.dart';
 import 'package:waslny_driver/components/custom_Button.dart';
 import 'package:waslny_driver/constants.dart';
-import 'package:waslny_driver/screens/complete_personal_info1_screen.dart';
+import 'package:waslny_driver/controllers/login_screen_controller.dart';
+import 'package:waslny_driver/controllers/otp_page_controller.dart';
 
 class OtpScreen extends StatelessWidget {
   const OtpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    String number = '0930474954';
+    OtpPageController controller = Get.find();
+    LoginScreenController loginScreenController = Get.find();
+
     return Scaffold(
-      backgroundColor: black1,
+      backgroundColor: black,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.only(right: 15.0),
@@ -36,7 +39,7 @@ class OtpScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      "$number",
+                      "+${loginScreenController.phoneNumber.toString()}",
                       style: TextStyle(
                           color: blue, fontSize: 22, fontFamily: 'cairo'),
                     ),
@@ -60,9 +63,9 @@ class OtpScreen extends StatelessWidget {
               ),
               CustomButton(
                 onTap: () {
-                  Get.to(CompletePersonalInfo1Screen());
+                  loginScreenController.showExtrnalDialog();
                 },
-                text: "تأكيد",
+                text: "ذهاب إلى تيليغرام",
                 isEnabled: true,
               )
             ],

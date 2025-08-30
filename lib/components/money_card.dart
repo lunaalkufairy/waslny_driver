@@ -27,18 +27,6 @@ class MoneyCard extends StatelessWidget {
       child: Stack(
         children: [
           Positioned(
-            bottom: 0,
-            left: 0,
-            child: GestureDetector(
-              onTap: () {},
-              child: Icon(
-                Icons.add,
-                size: 40,
-                color: black,
-              ),
-            ),
-          ),
-          Positioned(
             top: 1,
             right: 1,
             child: Column(

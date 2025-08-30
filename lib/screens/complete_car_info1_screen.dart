@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/instance_manager.dart';
+import 'package:waslny_driver/components/car_dropDown.dart';
+import 'package:waslny_driver/components/car_model_dropdown.dart';
 import 'package:waslny_driver/components/custom_Button.dart';
 import 'package:waslny_driver/components/custom_textField.dart';
 import 'package:waslny_driver/constants.dart';
@@ -9,7 +11,7 @@ import 'package:waslny_driver/screens/complete_car_info2_screen.dart';
 class CompleteCarInfo1Screen extends StatelessWidget {
   const CompleteCarInfo1Screen({super.key});
 
-  @override
+  // @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: black1,
@@ -29,26 +31,21 @@ class CompleteCarInfo1Screen extends StatelessWidget {
                 SizedBox(
                   height: 30,
                 ),
-                CustomTextfield(
-                  textFieldName: "اسم الشركة المصنعة",
-                  hintText: 'Mercedes AMG',
-                ),
+                // CustomTextfield(
+                //   textFieldName: "اسم الشركة المصنعة",
+                //   hintText: 'Mercedes AMG',
+                // ),
+                CarDropdown(),
                 SizedBox(
                   height: 25,
                 ),
-                CustomTextfield(
-                  textFieldName: "الموديل",
-                  hintText: 'CLA300',
-                ),
+                CarModelDropdown(),
                 SizedBox(
                   height: 25,
                 ),
-                CustomTextfield(
-                  textFieldName: "عدد المقاعد",
-                  hintText: '6',
-                ),
+
                 const SizedBox(
-                  height: 350,
+                  height: 410,
                 ),
                 CustomButton(
                   text: 'متابعة',

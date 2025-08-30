@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:waslny_driver/constants.dart';
 import 'package:waslny_driver/screens/my_orders_screen.dart';
 import 'package:waslny_driver/screens/setting_screen.dart';
-import 'package:waslny_driver/screens/view_information_screen.dart';
+import 'package:waslny_driver/screens/view_personal_info.dart';
 import 'package:waslny_driver/screens/wallet_screen.dart';
 
 class SideBar extends StatelessWidget {
@@ -37,7 +37,7 @@ class SideBar extends StatelessWidget {
                 ],
               ),
               onTap: () {
-                Get.to(ViewInformationScreen());
+                Get.to(ViewPersonalInfo());
               },
             ),
             ListTile(

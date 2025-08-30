@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:waslny_driver/components/accept_trip_buttom_sheet.dart';
+import 'package:waslny_driver/components/after_trip_buttom_sheet.dart';
+import 'package:waslny_driver/components/end_trip_buttom_sheet.dart';
 import 'package:waslny_driver/components/googleMap.dart';
 import 'package:waslny_driver/components/side_bar.dart';
 import 'package:waslny_driver/components/side_bar_button.dart';
+import 'package:waslny_driver/components/start_trip_buttom_sheet.dart';
+import 'package:waslny_driver/components/visibility.dart';
 import 'package:waslny_driver/constants.dart';
 import 'package:waslny_driver/controllers/home_screen_controller.dart';
 
@@ -21,14 +26,8 @@ class HomeScreen extends StatelessWidget {
       body: Stack(
         children: [
           MapComponent(isZoomAble: false, ismoveAble: false),
-          Align(
-            alignment: Alignment(0.88, -0.85),
-            child: SideBarButton(
-              onTap: () {
-                controller.openDrawer();
-              },
-            ),
-          ),
+          Align(alignment: Alignment(0, -0.85), child: AvailabilitySwitch()),
+          Align(alignment: Alignment(0, 1), child: AfterTripButtomSheet()),
         ],
       ),
     );
