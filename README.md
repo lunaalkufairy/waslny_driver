@@ -11,18 +11,20 @@ A Flutter application for ride-sharing drivers. This app lets drivers manage tri
 - **Settings**: Profile management and app preferences
 - **Maps**: Google Maps integration for navigation and location tracking
 
-## 🛠 Tech Stack & Mian Dependencies
+## 🛠 Tech Stack & Main Dependencies
 
 - Flutter SDK 3.6.1+
 - GetX for state management
 - Google Maps for location services
-- Real-time updates with Pusher
+- Real-time updates with Pusher(still in progress)
 - `google_maps_flutter` - Maps integration
 - `geolocator` - Location services
-- `pusher_channels_flutter` - Real-time updates
+- `pusher_channels_flutter` - Real-time updates(still in progress)
 - `http` - API calls
 - `image_picker` - Photo selection
 - `get` - State management and routing
+
+See `pubspec.yaml` for complete dependencies.
 
 ## 📁 Project Structure
 
@@ -60,13 +62,7 @@ lib/
    flutter pub get
    ```
 
-3. Add Google Maps API key
-
-   - Android: Add to `android/app/src/main/AndroidManifest.xml`
-   - iOS: Add to `ios/Runner/AppDelegate.swift`
-   - Update base URL in `lib/constants.dart` if needed
-
-4. Run the app
+3. Run the app
    ```bash
    flutter run
    ```
@@ -80,6 +76,12 @@ Figma design: [View Design](https://www.figma.com/design/HWHTjJoTfET6pRxGaBBTmj/
 ### 🎥 App Demo:
 
 coming soon!
+
+## 🏗️ Architecture
+
+- **State Management**: GetX (reactive state, dependency injection, routing)
+- **Architecture**: MVC-like pattern (Controllers, Screens, Models)
+- **UI**: All components are custom-built (no default templates)
 
 ## 📊 Testing
 
