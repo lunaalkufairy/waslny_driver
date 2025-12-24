@@ -11,15 +11,12 @@ A Flutter application for ride-sharing drivers. This app lets drivers manage tri
 - **Settings**: Profile management and app preferences
 - **Maps**: Google Maps integration for navigation and location tracking
 
-## Tech Stack
+## 🛠 Tech Stack & Mian Dependencies
 
 - Flutter SDK 3.6.1+
 - GetX for state management
 - Google Maps for location services
 - Real-time updates with Pusher
-
-### Main Dependencies
-
 - `google_maps_flutter` - Maps integration
 - `geolocator` - Location services
 - `pusher_channels_flutter` - Real-time updates
@@ -74,35 +71,17 @@ lib/
    flutter run
    ```
 
-## How It Works
+## 🪄 Design
 
-### Driver Registration Flow
-
-1. Login with phone number
-2. Verify OTP code
-3. Complete personal information
-4. Add car information and documents
-5. Start accepting trips
-
-### Trip Flow
-
-1. Receive trip request notification
-2. Accept or decline the trip
-3. Navigate to pickup location
-4. Start the trip
-5. Complete the trip and rate the passenger
-
-## 📸 Design
-
-### Screenshots:
+### 📸 Screenshots:
 
 Figma design: [View Design](https://www.figma.com/design/HWHTjJoTfET6pRxGaBBTmj/Waslny?node-id=337-1255&p=f&t=edB9geqJBebuFSyy-0)
 
-### App Demo:
+### 🎥 App Demo:
 
 coming soon!
 
-## Testing
+## 📊 Testing
 
 Run tests with:
 
@@ -110,7 +89,7 @@ Run tests with:
 flutter test
 ```
 
-## Notes
+## 📝 Notes
 
 - Uses GetX for state management and routing
 - Custom widgets for reusable components
