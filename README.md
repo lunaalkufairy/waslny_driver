@@ -219,7 +219,7 @@ The app supports both **Light** and **Dark** modes with a comprehensive color sy
 ## 📸 Screenshots & Design
 
 Check the Figma design for detailed UI/UX:
-[Figma Design Link](https://www.figma.com/design/HWHTjJoTfET6pRxGaBBTmj/Untitled?node-id=0-1&t=stNezDouVz85vzVU-1)
+[Figma Design Link](https://www.figma.com/design/HWHTjJoTfET6pRxGaBBTmj/Waslny?node-id=337-1255&p=f&t=edB9geqJBebuFSyy-0)
 
 ---
 
